@@ -7,7 +7,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@sveltejs/adapter-netlify": "next",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "gray-matter": "^4.0.3",
     "marked": "^2.0.3",
