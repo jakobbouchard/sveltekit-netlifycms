@@ -15,7 +15,7 @@ collections:
     label: "Blog"
     folder: "content/posts"
     create: true
-    slug: {{slug}}
+    slug: "{{slug}}"
     preview_path: "blog/{{slug}}"
     fields:
       - label: "Featured Image"
