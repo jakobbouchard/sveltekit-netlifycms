@@ -2,7 +2,7 @@
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load({fetch}) {
+	export async function load({ fetch }) {
 		const res = await fetch('blog.json');
 
 		if (res.ok) {
