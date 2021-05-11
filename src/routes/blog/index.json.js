@@ -20,11 +20,9 @@ const getAllPosts = () => {
 export async function get() {
 	const posts = getAllPosts();
 
-	if (posts) {
-		return {
-			body: {
-				posts
-			}
-		};
-	}
+	return {
+		body: {
+			posts
+		}
+	};
 }

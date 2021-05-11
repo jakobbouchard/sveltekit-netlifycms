@@ -24,7 +24,7 @@
 
 <h1>Recent posts</h1>
 
-{#if posts}
+{#if posts.length != 0}
 	<ul>
 		{#each posts as post}
 			<!-- we're using the non-standard `sveltekit:prefetch` attribute to
@@ -34,4 +34,6 @@
 			<li><a sveltekit:prefetch href="blog/{ post.slug }">{ post.title }</a></li>
 		{/each}
 	</ul>
+{:else}
+	<p>No projects were found.</p>
 {/if}
