@@ -13,7 +13,7 @@ collections:
   - name: "posts"
     label: "Posts"
     label_singular: "Post"
-    folder: "content/posts"
+    folder: "content/blog"
     create: true
     slug: "{{slug}}"
     preview_path: "blog/{{slug}}"
