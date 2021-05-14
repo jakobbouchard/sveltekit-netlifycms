@@ -3,15 +3,21 @@
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ page, fetch }) {
-		const url = `/blog/${ page.params.slug }`;
+		const { postType, slug } = page.params;
+		const url = `/${ postType }/${ slug }`;
 		const res = await fetch(`${ url }.json`);
 
 		if (res.ok) {
 			return {
-				props: {
-					post: await res.json()
-				}
+				props: { post: await res.json() }
 			};
+		}
+
+		if (res.status == 404) {
+			return {
+				status: res.status,
+				error: new Error('This page does not exist')
+			}
 		}
 
 		return {
@@ -29,6 +35,10 @@
 	<title>{ post.title }</title>
 </svelte:head>
 
-<article>
+<!-- Post images are purely decorative -->
+<!-- svelte-ignore a11y-missing-attribute -->
+<img src="{ post.thumbnail }">
+
+<article class="prose">
 	{ @html post.html }
 </article>
